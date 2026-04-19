@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Smart Archaeology Robot</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at top,#1b1b1b 10%,#0d0d0d 90%);
+  color:#fff;
+  overflow-x:hidden;
+  position:relative;
+}
+.stars{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity:0.08;
+  animation:moveStars 80s linear infinite;
+  z-index:-1;
+}
+@keyframes moveStars{
+  from{background-position:0 0;}
+  to{background-position:2000px 2000px;}
+}
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:rgba(217,111,50,0.1);
+  backdrop-filter: blur(8px);
+  position:sticky;
+  top:0;
+  z-index:10;
+  border-bottom:1px solid rgba(255,255,255,0.15);
+}
+nav h2{
+  font-family:'Orbitron',sans-serif;
+  font-weight:700;
+  color:#F8B259;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+nav ul li a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+  transition:0.3s;
+  position:relative;
+}
+nav ul li a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0%;
+  height:2px;
+  background-color:#F8B259;
+  transition:0.3s;
+}
+nav ul li a:hover::after{width:100%;}
+nav ul li a:hover{color:#F8B259;}
+
+.hero{
+  text-align:center;
+  padding:100px 20px 60px;
+}
+.hero h1{
+  font-family:'Orbitron',sans-serif;
+  font-size:50px;
+  background:linear-gradient(90deg,#F8B259,#D96F32,#C75D2C);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:20px;
+}
+.hero p{
+  max-width:800px;
+  margin:auto;
+  color:#F3E9DC;
+  font-size:18px;
+  line-height:1.8;
+  opacity:0.9;
+}
+
+.contact-section{
+  padding:80px 10%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:50px;
+}
+
+.contact-info,
+.contact-form{
+  background:rgba(255,255,255,0.08);
+  border-radius:20px;
+  padding:40px;
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 0 25px rgba(0,0,0,0.3);
+}
+
+.contact-info h2,
+.contact-form h2{
+  color:#F8B259;
+  margin-bottom:20px;
+  font-family:'Orbitron',sans-serif;
+}
+
+.contact-info p{
+  color:#ddd;
+  line-height:1.8;
+  margin-bottom:15px;
+}
+
+.contact-info span{
+  color:#F8B259;
+  font-weight:600;
+}
+
+.contact-form form{
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  background:rgba(0,0,0,0.5);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:12px;
+  padding:15px;
+  color:#fff;
+  font-family:'Poppins',sans-serif;
+  font-size:15px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline:none;
+  border-color:#F8B259;
+  box-shadow:0 0 10px rgba(248,178,89,0.4);
+}
+
+.contact-form textarea{
+  resize:none;
+  height:150px;
+}
+
+.btn{
+  background:linear-gradient(90deg,#F8B259,#D96F32);
+  padding:15px;
+  border-radius:50px;
+  border:none;
+  color:#fff;
+  font-weight:600;
+  letter-spacing:1px;
+  cursor:pointer;
+  transition:0.4s;
+  box-shadow:0 0 20px rgba(248,178,89,0.3);
+}
+
+.btn:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 25px rgba(248,178,89,0.8);
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  background:rgba(0,0,0,0.6);
+  border-top:1px solid rgba(255,255,255,0.15);
+  color:#bbb;
+  font-size:14px;
+}
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo-area img{
+  width:75px;
+  height:75px;
+  object-fit:contain;
+  border-radius:12px;
+  box-shadow:0 0 18px rgba(248,178,89,0.45);
+  transition:0.4s;
+}
+
+
+.logo-area img:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px rgba(248,178,89,0.8);
+}
+.logo-area span{
+  font-family:'Orbitron',sans-serif;
+  font-weight:700;
+  color:#F8B259;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  font-size:20px;
+}
+
+
+</style>
+</head>
+
+<body>
+<div class="stars"></div>
+
+<nav>
+  <div class="logo-area">
+  <img src="./logo.jpeg" alt="Project Logo">
+  <span>TechnoRelics</span>
+</div>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="identify.html">Identify</a></li>
+    <li><a href="design.html">Design</a></li>
+    <li><a href="create.html">Create</a></li>
+    <li><a href="./iterate.html">Iterate</a></li>
+        <li><a href="./communicate.html">Communicate</a></li>
+    <li><a href="contact.html" style="color:#F8B259;">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <h1>Contact Us</h1>
+  <p>
+    Have questions about our bio-inspired archaeology robot?
+    Feel free to reach out for collaboration, research inquiries, or feedback.
+  </p>
+</section>
+
+<section class="contact-section">
+  <div class="contact-info">
+    <h2>Get in Touch</h2>
+    <p><span>Project:</span> TechnoRelics</p>
+    <p><span>Field:</span> Bio-Inspired Robotics & Archaeology</p>
+    <p><span>Purpose:</span> Protecting cultural heritage using advanced technology</p>
+    <p><span>Email:</span> TechnoRelics@project.com</p>
+    <p><span>Get Access to TechnoRelics:</span> If you're interested in purchasing our project, please fill in your details</p>
+  </div>
+
+  <div class="contact-form">
+    <h2>Send a Message</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2026 Smart Archaeology Robot Project — Designed for Innovation & Preservation
+</footer>
+
+</body>
+</html>

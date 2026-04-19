@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechnoRelics Chat</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:radial-gradient(circle at top,#1b1b1b 10%,#0d0d0d 90%);
+  color:#fff;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+}
+
+.stars{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity:0.08;
+  animation:moveStars 80s linear infinite;
+  z-index:-1;
+}
+@keyframes moveStars{
+  from{background-position:0 0;}
+  to{background-position:2000px 2000px;}
+}
+
+/* HEADER */
+.chat-header{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:20px;
+  background:rgba(217,111,50,0.1);
+  border-bottom:1px solid rgba(255,255,255,0.15);
+}
+
+.chat-header h2{
+  font-family:'Orbitron';
+  color:#F8B259;
+}
+
+/* CHAT */
+.chat-container{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  padding:20px;
+  overflow-y:auto;
+}
+
+.message{
+  max-width:70%;
+  padding:12px 18px;
+  border-radius:20px;
+  margin-bottom:10px;
+  animation:fadeIn 0.3s ease;
+  box-shadow:0 0 15px rgba(0,0,0,0.4);
+}
+
+.sent{
+  align-self:flex-end;
+  background:linear-gradient(90deg,#F8B259,#D96F32);
+  box-shadow:0 0 15px rgba(248,178,89,0.5);
+}
+
+.received{
+  align-self:flex-start;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter: blur(5px);
+}
+
+.typing{
+  font-style: italic;
+  opacity: 0.7;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink{
+  0%{opacity:0.3;}
+  50%{opacity:1;}
+  100%{opacity:0.3;}
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(10px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* INPUT */
+.input-area{
+  display:flex;
+  gap:10px;
+  padding:15px;
+  background:rgba(0,0,0,0.6);
+  border-top:1px solid rgba(255,255,255,0.15);
+}
+
+.input-area input{
+  flex:1;
+  padding:12px;
+  border-radius:25px;
+  border:none;
+  background:#222;
+  color:#fff;
+}
+
+.input-area input:focus{
+  outline:none;
+  box-shadow:0 0 10px rgba(248,178,89,0.5);
+}
+
+.btn{
+  background:linear-gradient(90deg,#F8B259,#D96F32);
+  border:none;
+  padding:12px 18px;
+  border-radius:50%;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.1);
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="chat-header">
+  <h2>TechnoRelics Chat</h2>
+</div>
+
+<div class="chat-container" id="chat"></div>
+
+<div class="input-area">
+  <input type="text" id="input" placeholder="Type a message...">
+  <button class="btn" onclick="sendMessage()">➤</button>
+</div>
+
+
+<script>
+const chat = document.getElementById("chat");
+const input = document.getElementById("input");
+
+/* 👤 Multiple Bot Personas */
+const bots = [
+  {name:"Alex AI", style:"friendly"},
+  {name:"Nova Bot", style:"smart"},
+  {name:"Echo", style:"mysterious"}
+];
+
+/* 🎭 Response templates */
+const replies = {
+  hello:[
+    "Hey 👋 nice to see you!",
+    "Hello! I'm here 😄",
+    "Hi there! What’s up?"
+  ],
+  tech:[
+    "Technology is evolving faster than ever 🚀",
+    "That sounds like an interesting tech idea 🤖",
+    "I think this relates to robotics and AI systems."
+  ],
+  who:[
+    "I'm an AI chatbot with multiple personalities 🎭",
+    "I exist inside your project as a smart assistant 🤖",
+    "I'm TechnoRelics AI system."
+  ],
+  default:[
+    "Interesting... tell me more 🤔",
+    "I’m thinking about that...",
+    "Can you explain differently?",
+    "Hmm... I need more details 👀"
+  ]
+};
+
+/* 🧠 smarter text understanding */
+function detect(text){
+  text = text.toLowerCase();
+
+  if(text.includes("hello") || text.includes("hi")) return "hello";
+  if(text.includes("robot") || text.includes("tech") || text.includes("technology")) return "tech";
+  if(text.includes("who") || text.includes("your name")) return "who";
+
+  return "default";
+}
+
+/* 💬 send message */
+function send(){
+  let text = input.value.trim();
+  if(!text) return;
+
+  add(text,"sent");
+  input.value="";
+
+  showTyping();
+
+  setTimeout(()=>{
+    hideTyping();
+    botReply(text);
+  },1200);
+}
+
+/* ➕ add message */
+function add(text,type){
+  const div = document.createElement("div");
+  div.className = "msg "+type;
+  div.innerText = text;
+  chat.appendChild(div);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+/* ⏳ typing */
+function showTyping(){
+  const div = document.createElement("div");
+  div.className = "msg received typing";
+  div.id="typing";
+  div.innerText = "Typing...";
+  chat.appendChild(div);
+}
+
+function hideTyping(){
+  const t = document.getElementById("typing");
+  if(t) t.remove();
+}
+
+/* 🤖 bot reply with randomness */
+function botReply(text){
+  const type = detect(text);
+  const options = replies[type];
+
+  const randomReply = options[Math.floor(Math.random()*options.length)];
+
+  add(randomReply,"received");
+}
+
+/* enter key */
+input.addEventListener("keypress",(e)=>{
+  if(e.key==="Enter") send();
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Archaeology Robot | Contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+ <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family: 'Poppins', sans-serif; background: radial-gradient(circle at top, #1b1b1b 10%, #0d0d0d 90%); color:#fff; overflow-x:hidden; position:relative;}
+    .stars {position:absolute; width:100%; height:100%; background:url('https://www.transparenttextures.com/patterns/stardust.png'); opacity:0.08; animation:moveStars 80s linear infinite; z-index:-1;}
+    @keyframes moveStars {from {background-position:0 0;} to {background-position:2000px 2000px;}}
+    nav {display:flex; justify-content:space-between; align-items:center; padding:20px 60px; background: rgba(217,111,50,0.1); backdrop-filter: blur(8px); position: sticky; top:0; z-index:10; border-bottom:1px solid rgba(255,255,255,0.15);}
+    nav h2 {font-family:'Orbitron',sans-serif; font-weight:700; color:#F8B259; letter-spacing:1px; text-transform:uppercase;}
+    nav ul {list-style:none; display:flex; gap:30px;}
+    nav ul li a {color:#fff; text-decoration:none; font-weight:500; transition:0.3s; position:relative;}
+    nav ul li a::after {content:''; position:absolute; left:0; bottom:-4px; width:0%; height:2px; background-color:#F8B259; transition:0.3s;}
+    nav ul li a:hover::after {width:100%;}
+    nav ul li a:hover {color:#F8B259;}
+    .hero {text-align:center; padding:120px 20px 60px;}
+    .hero h1 {font-family:'Orbitron',sans-serif; font-size:55px; background: linear-gradient(90deg, #F8B259, #D96F32, #C75D2C); -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation: glow 2s infinite alternate; margin-bottom:20px;}
+    @keyframes glow {from { text-shadow:0 0 10px #F8B25944;} to { text-shadow:0 0 25px #F8B25988;}}
+    .hero p {font-size:18px; color:#F3E9DC; max-width:850px; margin:auto; line-height:1.8; opacity:0.9; animation: fadeIn 1.5s ease;}
+    @keyframes fadeIn {from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);}}
+    .features-section {padding:100px 8%; display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:40px;}
+    .feature-card {background: rgba(255,255,255,0.08); border-radius:20px; padding:30px 25px; border:1px solid rgba(255,255,255,0.15); box-shadow:0 0 25px rgba(0,0,0,0.3); text-align:center; transition: all 0.4s ease;}
+    .feature-card:hover {transform:translateY(-10px) scale(1.03); box-shadow:0 0 30px rgba(248,178,89,0.4);}
+    .feature-card h2 {color:#F8B259; font-size:22px; margin-bottom:15px;}
+    .feature-card p {color:#ddd; line-height:1.6; font-size:15px;}
+    .highlight {text-align:center; padding:100px 40px; background: linear-gradient(90deg, rgba(217,111,50,0.15), rgba(248,178,89,0.15)); border-top:1px solid rgba(255,255,255,0.1);}
+    .highlight h2 {font-family:'Orbitron',sans-serif; font-size:40px; color:#F8B259; margin-bottom:25px; text-shadow:0 0 20px rgba(248,178,89,0.4);}
+    .highlight p {max-width:800px; margin:auto; line-height:1.8; color:#eee; font-size:18px;}
+    .section-title {text-align:center; font-family:'Orbitron',sans-serif; font-size:38px; color:#F8B259; margin:80px 0 40px; text-shadow:0 0 20px rgba(248,178,89,0.4);}
+    .tech-grid {display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:35px; padding:0 8% 80px;}
+    .tech-card {background: rgba(255,255,255,0.08); border-radius:20px; padding:25px; border:1px solid rgba(255,255,255,0.15); text-align:center; transition:0.3s;}
+    .tech-card:hover {transform:translateY(-8px) scale(1.03); box-shadow:0 0 25px rgba(248,178,89,0.4);}
+    .tech-card h3 {color:#F8B259; margin-bottom:12px;}
+    .tech-card p {color:#ddd; font-size:14px; line-height:1.6;}
+    footer {text-align:center; padding:30px; background: rgba(0,0,0,0.6); border-top:1px solid rgba(255,255,255,0.15); color:#bbb; font-size:14px; letter-spacing:1px;}
+    .logo-area{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo-area img{
+  width:75px;
+  height:75px;
+  object-fit:contain;
+  border-radius:12px;
+  box-shadow:0 0 18px rgba(248,178,89,0.45);
+  transition:0.4s;
+}
+
+
+.logo-area img:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px rgba(248,178,89,0.8);
+}
+.logo-area span{
+  font-family:'Orbitron',sans-serif;
+  font-weight:700;
+  color:#F8B259;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  font-size:20px;
+}
+  </style>
+</head>
+<body>
+<div class="stars"></div>
+
+<nav>
+<div class="logo-area">
+  <img src="./logo.jpeg" alt="Project Logo">
+  <span>TechnoRelics</span>
+</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="identify.html">Identify</a></li>
+<li><a href="design.html">Design</a></li>
+<li><a href="./create.html" >Create</a></li>
+<li><a href="./iterate.html" style="color:#F8B259;">Iterate</a></li>
+<li><a href="./communicate.html">Communicate</a></li>
+</ul>
+</nav>
+<h2 class="section-title">User Testing & Feedback</h2>
+
+<section class="features-section">
+  <div class="feature-card">
+    <h2>Field Testing</h2>
+    <p>
+To improve the design of the TechnoRelics system, the prototype was shared with users to simulate real archaeological field conditions. The testing revealed differences in user ability to operate the robot, highlighting the need for a simpler and more intuitive interface.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <h2>Usability Challenges</h2>
+    <p>
+One participant struggled due to unclear instructions, while another required direct guidance. This emphasized the importance of a menu-based control system for easy access to core functions such as movement, scanning, and documentation.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <h2>Safety & Maintenance</h2>
+    <p>
+Users raised concerns about maintenance and potential damage to artifacts. A safety alarm was triggered during excavator arm movement, indicating the need to refine safety zones and improve visual and audio warnings.
+    </p>
+  </div>
+</section>
+
+<!-- Survey Results -->
+<h2 class="section-title">Survey Results</h2>
+
+<section class="features-section">
+  <div class="feature-card">
+    <h2>Technology Acceptance</h2>
+    <p>
+Most participants were aware of archaeological robotics and supported the use of modern technology in excavation projects.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <h2>Key Priorities</h2>
+    <p>
+Accuracy and artifact protection were identified as the most critical system features for successful field deployment.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <h2>Main Concerns</h2>
+    <p>
+Participants expressed concerns about artifact safety, system complexity, and overall project cost.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <h2>Deployment in Egypt</h2>
+    <p>
+Respondents confirmed that the system is suitable for deployment at Egyptian archaeological sites, with recommendations for clearer instructions and improved safety measures.
+    </p>
+  </div>
+</section>
+
+<!-- Proposed Improvements -->
+<h2 class="section-title">Proposed Improvements</h2>
+
+<section class="features-section">
+  <div class="feature-card">
+    <h2>Interface Design</h2>
+    <p>
+Develop a more intuitive, menu-based user interface to simplify robot operation.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <h2>Operating Instructions</h2>
+    <p>
+Provide clear and easy-to-follow operating instructions for all users.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <h2>Enhanced Safety</h2>
+    <p>
+Enhance safety systems and alerts around moving parts to protect users and artifacts.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <h2>Maintenance Guide</h2>
+    <p>
+Include a basic maintenance guide to allow routine checks and minor adjustments without specialist support.
+    </p>
+  </div>
+</section>

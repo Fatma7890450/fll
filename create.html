@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Archaeology Robot | Contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+ <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family: 'Poppins', sans-serif; background: radial-gradient(circle at top, #1b1b1b 10%, #0d0d0d 90%); color:#fff; overflow-x:hidden; position:relative;}
+    .stars {position:absolute; width:100%; height:100%; background:url('https://www.transparenttextures.com/patterns/stardust.png'); opacity:0.08; animation:moveStars 80s linear infinite; z-index:-1;}
+    @keyframes moveStars {from {background-position:0 0;} to {background-position:2000px 2000px;}}
+    nav {display:flex; justify-content:space-between; align-items:center; padding:20px 60px; background: rgba(217,111,50,0.1); backdrop-filter: blur(8px); position: sticky; top:0; z-index:10; border-bottom:1px solid rgba(255,255,255,0.15);}
+    nav h2 {font-family:'Orbitron',sans-serif; font-weight:700; color:#F8B259; letter-spacing:1px; text-transform:uppercase;}
+    nav ul {list-style:none; display:flex; gap:30px;}
+    nav ul li a {color:#fff; text-decoration:none; font-weight:500; transition:0.3s; position:relative;}
+    nav ul li a::after {content:''; position:absolute; left:0; bottom:-4px; width:0%; height:2px; background-color:#F8B259; transition:0.3s;}
+    nav ul li a:hover::after {width:100%;}
+    nav ul li a:hover {color:#F8B259;}
+    .hero {text-align:center; padding:120px 20px 60px;}
+    .hero h1 {font-family:'Orbitron',sans-serif; font-size:55px; background: linear-gradient(90deg, #F8B259, #D96F32, #C75D2C); -webkit-background-clip:text; -webkit-text-fill-color:transparent; animation: glow 2s infinite alternate; margin-bottom:20px;}
+    @keyframes glow {from { text-shadow:0 0 10px #F8B25944;} to { text-shadow:0 0 25px #F8B25988;}}
+    .hero p {font-size:18px; color:#F3E9DC; max-width:850px; margin:auto; line-height:1.8; opacity:0.9; animation: fadeIn 1.5s ease;}
+    @keyframes fadeIn {from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);}}
+    .features-section {padding:100px 8%; display:grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap:40px;}
+    .feature-card {background: rgba(255,255,255,0.08); border-radius:20px; padding:30px 25px; border:1px solid rgba(255,255,255,0.15); box-shadow:0 0 25px rgba(0,0,0,0.3); text-align:center; transition: all 0.4s ease;}
+    .feature-card:hover {transform:translateY(-10px) scale(1.03); box-shadow:0 0 30px rgba(248,178,89,0.4);}
+    .feature-card h2 {color:#F8B259; font-size:22px; margin-bottom:15px;}
+    .feature-card p {color:#ddd; line-height:1.6; font-size:15px;}
+    .highlight {text-align:center; padding:100px 40px; background: linear-gradient(90deg, rgba(217,111,50,0.15), rgba(248,178,89,0.15)); border-top:1px solid rgba(255,255,255,0.1);}
+    .highlight h2 {font-family:'Orbitron',sans-serif; font-size:40px; color:#F8B259; margin-bottom:25px; text-shadow:0 0 20px rgba(248,178,89,0.4);}
+    .highlight p {max-width:800px; margin:auto; line-height:1.8; color:#eee; font-size:18px;}
+    .section-title {text-align:center; font-family:'Orbitron',sans-serif; font-size:38px; color:#F8B259; margin:80px 0 40px; text-shadow:0 0 20px rgba(248,178,89,0.4);}
+    .tech-grid {display:grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap:35px; padding:0 8% 80px;}
+    .tech-card {background: rgba(255,255,255,0.08); border-radius:20px; padding:25px; border:1px solid rgba(255,255,255,0.15); text-align:center; transition:0.3s;}
+    .tech-card:hover {transform:translateY(-8px) scale(1.03); box-shadow:0 0 25px rgba(248,178,89,0.4);}
+    .tech-card h3 {color:#F8B259; margin-bottom:12px;}
+    .tech-card p {color:#ddd; font-size:14px; line-height:1.6;}
+    footer {text-align:center; padding:30px; background: rgba(0,0,0,0.6); border-top:1px solid rgba(255,255,255,0.15); color:#bbb; font-size:14px; letter-spacing:1px;}
+    .logo-area{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo-area img{
+  width:75px;
+  height:75px;
+  object-fit:contain;
+  border-radius:12px;
+  box-shadow:0 0 18px rgba(248,178,89,0.45);
+  transition:0.4s;
+}
+
+
+.logo-area img:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px rgba(248,178,89,0.8);
+}
+.logo-area span{
+  font-family:'Orbitron',sans-serif;
+  font-weight:700;
+  color:#F8B259;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  font-size:20px;
+}
+/* Image Showcase */
+.image-showcase {
+  padding: 80px 8%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.image-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 0 35px rgba(0,0,0,0.6);
+  transition: 0.4s;
+}
+
+.image-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 45px rgba(248,178,89,0.5);
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.95) contrast(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.85),
+    rgba(0,0,0,0.1)
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 25px;
+}
+
+.image-overlay h3 {
+  color: #F8B259;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow:
+    0 0 10px rgba(248,178,89,0.6),
+    0 0 25px rgba(248,178,89,0.5);
+  font-size: 20px;
+}
+
+  </style>
+</head>
+<body>
+<div class="stars"></div>
+
+<nav>
+<div class="logo-area">
+  <img src="./logo.jpeg" alt="Project Logo">
+  <span>TechnoRelics</span>
+</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="identify.html">Identify</a></li>
+<li><a href="design.html">Design</a></li>
+<li><a href="./create.html" style="color:#F8B259;">Create</a></li>
+<li><a href="./iterate.html">Iterate</a></li>
+<li><a href="./communicate.html">Communicate</a></li>
+</ul>
+</nav>
+
+ <section class="hero">
+    <h1>Solutions of our robot</h1>
+    <p>Explore the advanced features that make our robot the ultimate tool for autonomous archaeological exploration.</p>
+  </section>
+<h2 class="section-title">UGV</h2> 
+<section class="features-section">
+    <div class="feature-card">
+      <h2>Small Tracked UGV</h2>
+      <p>Advantages: Excellent on rough terrains, stable movement, equipped with basic camera and sensors.
+Limitations: Fully operator-dependent with no autonomy, cannot monitor excavation or underground layers, limited 3D mapping, no analysis of inscriptions or civilizations, moderate human risk reduction, and standard GPS with limited accuracy.</p>
+    </div>
+    <div class="feature-card">
+      <h2>Modular Research UGV</h2>
+<p>Advantages: Excellent mobility, flexible for research experiments, supports multiple sensors, and GPS/RTK improves positioning accuracy.
+Limitations: Partial autonomy requiring human intervention in some tasks, cannot monitor excavation or layers, 3D mapping is experimental only, no inscription or civilization analysis, and human risk reduction depends on the operator.
+</p>
+    </div>
+   <div class="feature-card">
+      <h2>Inspection Ground Robot</h2>
+<p>Advantages: Good for accessing narrow areas, mounted camera for basic documentation, reduces human risk in tight spaces.
+Limitations: Very limited mobility on rough terrain, operator-dependent with no autonomy, cannot monitor excavation or layers, limited 3D mapping, no inscription/civilization analysis, and limited GPS accuracy.
+</p>
+    </div>
+    <div class="feature-card">
+      <h2>Tethered Inspection UGV</h2>
+<p>
+Advantages: Good mobility, can operate for long periods due to tethered power, equipped with camera and LiDAR depending on system, improved GPS/RTK positioning, excellent risk reduction in deep areas.
+Limitations: Limited autonomy due to tether or system dependency, cannot monitor excavation or layers, 3D mapping limited to available sensors, and no inscription/civilization analysis.
+
+</p>
+    </div>
+<div class="feature-card">
+      <h2>Wheeled Micro UGV</h2>
+<p>
+Advantages: Performs well on flat terrain, lightweight and easy to transport, fast on smooth surfaces.
+Limitations: Very limited on rough terrain, operator-dependent with no autonomy, cannot monitor excavation or layers, very limited 3D mapping, no inscription/civilization analysis, limited human risk reduction, standard GPS only.</p>
+    </div>
+    <div class="feature-card">
+      <h2>Custom Archaeological UGV</h2>
+<p>
+Advantages: Tailored to the site design, equipped with cameras and multiple sensors as needed, flexible and adapted to specific site conditions.
+Limitations: Limited autonomy, rarely fully autonomous, excavation/layer monitoring partial depending on design, 3D mapping may be incomplete, inscription/civilization analysis limited or absent, human risk reduction depends on design, positioning accuracy varies.</p>
+    </div>
+  </section>
+  <h2 class="section-title">System Interface & Dashboard</h2>
+
+<section class="image-showcase">
+  <div class="image-card">
+    <img src="./create.jpeg" alt="3D Mapping & Excavation Dashboard">
+    <div class="image-overlay">
+      <h3>3D Mapping & Excavation Interface</h3>
+    </div>
+  </div>
+
+  <div class="image-card">
+    <img src="./Blynk.jpeg" alt="Archaeological Data System Dashboard">
+    <div class="image-overlay">
+      <h3>Archaeological Data System Dashboard</h3>
+    </div>
+  </div>
+</section>
+
+<h2 class="section-title">Product & Services</h2> 
+  <section class="features-section">
+    <div class="feature-card">
+      <h2>SiteScout</h2>
+      <p>A robotic UGV-like system for archaeological site inspection and documentation</p>
+    </div>
+    <div class="feature-card">
+      <h2>ArchaeoBot</h2>
+<p>Inspects and monitors archaeological sites to detect risks and protect sensitive areas</p>
+    </div>
+   <div class="feature-card">
+      <h2>DataSense</h2>
+<p>Collects field data accurately using advanced sensors and equipment for precise
+analysis</p>
+    </div>
+    <div class="feature-card">
+      <h2>SiteMapper</h2>
+<p>
+Generates 3D maps and models of the site and artifacts</p>
+    </div>
+<div class="feature-card">
+      <h2>Informa</h2>
+<p>
+Provides reliable information for decision-making and planning restoration or
+preservation work</p>
+    </div>
+    <div class="feature-card">
+      <h2>Rover</h2>
+<p>
+Enables remote monitoring and recording of the site using UGV technology</p>
+    </div>
+  </section>
+
+  <!-- Technologies -->
+  <h2 class="section-title">Gains Creator </h2>
+  <section class="tech-grid">
+    <div class="tech-card">
+      <h3>ResiliBot</h3>
+<p>The robot can correct its position after falling and handle hazardous
+terrains.</p>
+    </div>
+    <div class="tech-card">
+      <h3>AutoMind</h3>
+      <p>
+An intelligent and autonomous system that reduces the need for
+complex human intervention. </p>
+    </div>
+    <div class="tech-card">
+      <h3>SiteGuard</h3>
+      <p>
+
+Monitors the archaeological site and protects sensitive areas during
+excavation.</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <h2 class="section-title">Pain Relievers </h2>
+  <section class="features-section">
+    <div class="feature-card">
+      <p>Add a little Problem: Working at archaeological sites
+
+Solution: Evaluating risks and protecting the team</p>
+    </div>
+    <div class="feature-card">
+   
+      <p>Problem: Difficulty in accurately documenting the site using slow traditional methods
+
+Solution: Rapid and accurate documentation</p>
+    </div>
+    <div class="feature-card">
+      
+      <p>Problem: Difficulty accessing narrow or dangerous areas
+
+Solution: Accessing difficult or dangerous areas
+</p>
+    </div>
+    <div class="feature-card">
+
+      <p>
+Problem: Difficulty collecting and analyzing data in an organized way for future
+projects
+
+Solution: Supporting informed decision-makingbit of body text</p>
+    </div>
+  </section>
+
+
+  <footer>
+    &copy; 2025 Smart Archaeology Robot | Designed by Fatma for FLL Master Project
+  </footer>
+</body>
+</html>

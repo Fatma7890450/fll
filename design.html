@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Archaeology Robot | Demo</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:radial-gradient(circle at top,#1b1b1b 10%,#0d0d0d 90%);color:#fff;overflow-x:hidden;position:relative;}
+.stars{position:absolute;width:100%;height:100%;background:url('https://www.transparenttextures.com/patterns/stardust.png');opacity:0.08;animation:moveStars 80s linear infinite;z-index:-1;}
+@keyframes moveStars{from{background-position:0 0;}to{background-position:2000px 2000px;}}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:rgba(217,111,50,0.1);backdrop-filter: blur(8px);position: sticky; top:0; z-index:10; border-bottom:1px solid rgba(255,255,255,0.15);}
+nav h2{font-family:'Orbitron',sans-serif;font-weight:700;color:#F8B259;letter-spacing:1px;text-transform:uppercase;}
+nav ul{list-style:none;display:flex;gap:30px;}
+nav ul li a{color:#fff;text-decoration:none;font-weight:500;transition:0.3s;position:relative;}
+nav ul li a::after{content:'';position:absolute;left:0;bottom:-4px;width:0%;height:2px;background-color:#F8B259;transition:0.3s;}
+nav ul li a:hover::after{width:100%;}
+nav ul li a:hover{color:#F8B259;}
+.hero{text-align:center;padding:100px 20px 60px;}
+.hero h1{font-family:'Orbitron',sans-serif;font-size:55px;background:linear-gradient(90deg,#F8B259,#D96F32,#C75D2C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:glow 2s infinite alternate;margin-bottom:20px;}
+@keyframes glow{from{text-shadow:0 0 10px #F8B25944;}to{text-shadow:0 0 25px #F8B25988;}}
+.hero p{font-size:18px;color:#F3E9DC;max-width:850px;margin:auto;line-height:1.8;opacity:0.9;animation:fadeIn 1.5s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+.demo-section{padding:80px 8%; display:grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap:40px;}
+.demo-card{background: rgba(255,255,255,0.08); border-radius:20px; padding:30px 25px; border:1px solid rgba(255,255,255,0.15); box-shadow:0 0 25px rgba(0,0,0,0.3); text-align:center; transition: all 0.4s ease;}
+.demo-card:hover{transform:translateY(-10px) scale(1.03); box-shadow:0 0 30px rgba(248,178,89,0.4);}
+.demo-card h2{color:#F8B259; font-size:22px; margin-bottom:15px;}
+.demo-card p{color:#ddd; line-height:1.6; font-size:15px;}
+.demo-card img{width:100%; border-radius:15px; margin-top:15px;}
+.section-title{text-align:center;font-family:'Orbitron',sans-serif;font-size:38px;color:#F8B259;margin:80px 0 40px;text-shadow:0 0 20px rgba(248,178,89,0.4);}
+.stats-section{display:flex;flex-wrap:wrap; justify-content:center; gap:50px; padding:80px 0;}
+.stat-card{background: rgba(255,255,255,0.08); padding:25px 35px; border-radius:20px; border:1px solid rgba(255,255,255,0.15); text-align:center; box-shadow:0 0 25px rgba(0,0,0,0.3);}
+.stat-card h2{color:#F8B259; font-size:28px; margin-bottom:12px;}
+.stat-card p{color:#ddd; font-size:16px; line-height:1.6;}
+.buttons{display:flex; justify-content:center; gap:30px; margin-top:40px; flex-wrap:wrap;}
+.btn{background: linear-gradient(90deg,#F8B259,#D96F32); padding:15px 45px; border-radius:50px; color:#fff; text-decoration:none; font-weight:600; letter-spacing:1px; transition:0.4s; box-shadow:0 0 20px rgba(248,178,89,0.3);}
+.btn:hover{transform:translateY(-5px); box-shadow:0 0 25px rgba(248,178,89,0.8);}
+footer{text-align:center; padding:30px; background: rgba(0,0,0,0.6); border-top:1px solid rgba(255,255,255,0.15); color:#bbb; font-size:14px; letter-spacing:1px;}
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.logo-area img{
+  width:75px;
+  height:75px;
+  object-fit:contain;
+  border-radius:12px;
+  box-shadow:0 0 18px rgba(248,178,89,0.45);
+  transition:0.4s;
+}
+
+
+.logo-area img:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px rgba(248,178,89,0.8);
+}
+.logo-area span{
+  font-family:'Orbitron',sans-serif;
+  font-weight:700;
+  color:#F8B259;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  font-size:20px;
+}
+
+</style>
+</head>
+<body>
+<div class="stars"></div>
+
+<nav>
+  <div class="logo-area">
+  <img src="./logo.jpeg" alt="Project Logo">
+  <span>TechnoRelics</span>
+</div>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="identify.html">identify</a></li>
+<li><a href="design.html" style="color:#F8B259;">Design</a></li>
+<li><a href="create.html">Create</a></li>
+<li><a href="./iterate.html">Iterate</a></li>
+<li><a href="./communicate.html">Communicate</a></li>
+</ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Bio-Inspired Scorpion Robot</h1>
+  <p>
+    A smart ground robot inspired by scorpion biology, designed to safely inspect
+    and excavate archaeological sites while preserving fragile cultural heritage.
+  </p>
+
+  <div class="buttons">
+    <a href="#design" class="btn">Explore Design</a>
+    <a href="#value" class="btn">Project Value</a>
+  </div>
+</section>
+
+<!-- Site Selection & Engineering Design -->
+<h2 class="section-title" id="design">Site Selection & Engineering Design</h2>
+<section class="demo-section">
+  <div class="demo-card">
+    <h2>Excavation Site Selection</h2>
+    <p>
+      The excavation site is selected with extreme care to avoid damaging
+      archaeological remains. Environmental sensitivity, soil conditions, and
+      surrounding artifacts are all considered to ensure safe operation.
+    </p>
+  </div>
+
+  <div class="demo-card">
+    <h2>Engineering Design Approach</h2>
+    <p>
+      The robot’s engineering design is tailored to the excavation environment.
+      Sensor placement is optimized for accuracy, efficiency, and minimal
+      interference with fragile archaeological elements.
+    </p>
+  </div>
+</section>
+
+<!-- Bio-Inspired Concept -->
+<h2 class="section-title">Bio-Inspired Scorpion Concept</h2>
+<section class="demo-section">
+  <div class="demo-card">
+    <h2>Biological Inspiration</h2>
+    <p>
+      Inspired by scorpion biology, the robot achieves an effective balance
+      between stability and mobility, enabling it to operate efficiently in
+      complex archaeological environments.
+    </p>
+  </div>
+
+  <div class="demo-card">
+    <h2>Compact Ground Robot</h2>
+    <p>
+      Its small size allows movement within narrow and confined spaces, making
+      it ideal for archaeological inspections where human access is limited
+      or risky.
+    </p>
+  </div>
+</section>
+
+<!-- Mechanical & Kinematic Characteristics -->
+<h2 class="section-title">Mechanical & Kinematic Characteristics</h2>
+<section class="demo-section">
+  <div class="demo-card">
+    <h2>Multiple Legs</h2>
+    <p>
+      The multi-legged structure provides high stability while moving on uneven
+      or fragile surfaces, which is essential for protecting archaeological sites.
+    </p>
+  </div>
+
+  <div class="demo-card">
+    <h2>High Mobility & Flexibility</h2>
+    <p>
+      The scorpion-inspired form allows smooth maneuvering in tight spaces without
+      disturbing surrounding archaeological elements.
+    </p>
+  </div>
+
+  <div class="demo-card">
+    <h2>Movable Tail</h2>
+    <p>
+      A movable tail is used for precise excavation and inspection tasks, ensuring
+      minimal disturbance to the archaeological environment.
+    </p>
+  </div>
+</section>
+
+<!-- Sensors Section -->
+<h2 class="section-title">Sensors & Safety Systems</h2>
+<section class="demo-section">
+  <div class="demo-card">
+    <h2>Obstacle Avoidance</h2>
+    <p>
+      Advanced sensors detect obstacles in real time, allowing the robot to
+      navigate safely without damaging artifacts or structures.
+    </p>
+  </div>
+
+  <div class="demo-card">
+    <h2>Soil Analysis</h2>
+    <p>
+      Soil analysis sensors help assess ground conditions, supporting safe and
+      informed excavation decisions.
+    </p>
+  </div>
+</section>
+
+<!-- Scientific & Practical Value -->
+<h2 class="section-title" id="value">Scientific & Practical Value</h2>
+<section class="stats-section">
+  <div class="stat-card">
+    <h2>Safety</h2>
+    <p>
+      Reduces human risk during archaeological exploration in hazardous or
+      hard-to-reach areas.
+    </p>
+  </div>
+
+  <div class="stat-card">
+    <h2>Precision</h2>
+    <p>
+      Enables accurate inspection and excavation while preserving fragile
+      archaeological remains.
+    </p>
+  </div>
+
+  <div class="stat-card">
+    <h2>Sustainability</h2>
+    <p>
+      Contributes to the protection and long-term sustainability of human
+      cultural heritage.
+    </p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  © 2026 Smart Archaeology Robot Project — Protecting the Past with Future Technology
+</footer>

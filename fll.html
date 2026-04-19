@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <meta charset="UTF-8" />
+  <title>Techno Relics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+  body {
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  margin: 0;
+  background: radial-gradient(circle at top, #1b1b1b 10%, #0d0d0d 90%);
+  color: #f3e9dc;
+}
+
+header {
+  background: rgba(217,111,50,0.15);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+header h1 {
+  margin: 0 0 10px;
+  font-size: 2.4rem;
+  color: #F8B259;
+  text-shadow: 0 0 15px rgba(248,178,89,0.5);
+}
+
+header p {
+  font-size: 1.1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #f3e9dc;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  color: #F8B259;
+  text-align: center;
+  margin-bottom: 25px;
+  text-shadow: 0 0 12px rgba(248,178,89,0.4);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #eee;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(248,178,89,0.4);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #F8B259;
+}
+
+.cta {
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.cta h2 {
+  margin-top: 0;
+  color: #F8B259;
+  text-shadow: 0 0 12px rgba(248,178,89,0.4);
+}
+
+.buttons button {
+  padding: 14px 28px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.buttons button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(248,178,89,0.4);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #F8B259, #D96F32);
+  color: #111;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  background: linear-gradient(90deg, #C75D2C, #D96F32);
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #F8B259;
+  color: #F8B259;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #ccc;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  background: rgba(0,0,0,0.6);
+}
+/* Stars Background */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.12;
+  animation: moveStars 90s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveStars {
+  from { background-position: 0 0; }
+  to { background-position: 2000px 2000px; }
+}
+
+/* Stronger Glow for Headings */
+header h1 {
+  color: #F8B259;
+  text-shadow:
+    0 0 10px rgba(248,178,89,0.6),
+    0 0 25px rgba(248,178,89,0.7),
+    0 0 45px rgba(248,178,89,0.6);
+}
+
+h2 {
+  color: #F8B259;
+  text-align: center;
+  margin-bottom: 25px;
+  text-shadow:
+    0 0 10px rgba(248,178,89,0.5),
+    0 0 25px rgba(248,178,89,0.6),
+    0 0 45px rgba(248,178,89,0.5);
+}
+
+/* Bigger Submit Button */
+.btn-primary {
+  background: linear-gradient(90deg, #F8B259, #D96F32);
+  color: #111;
+  font-weight: bold;
+  font-size: 1.15rem;
+  padding: 18px 36px;
+  border-radius: 35px;
+  box-shadow: 0 0 20px rgba(248,178,89,0.5);
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow:
+    0 0 25px rgba(248,178,89,0.7),
+    0 0 45px rgba(217,111,50,0.6);
+}
+
+</style>
+</head>
+<body>
+<div class="stars"></div>
+
+<header>
+  <h1>Techno Relics</h1>
+  <p>
+    An innovative autonomous ground robot designed to revolutionize archaeological excavation
+    through intelligent automation, enhanced safety, and high-precision documentation.
+  </p>
+</header>
+
+<section>
+  <h2>Project Overview</h2>
+  <p style="line-height:1.9;">
+    Techno Relics is a smart autonomous ground robot capable of navigating rough and complex terrains
+    while automatically correcting its position when losing balance or tipping over.
+    It supports semi-autonomous excavation operations by identifying sensitive archaeological layers
+    before any human intervention, ensuring site preservation.
+    <br /><br />
+    The robot documents archaeological sites and tombs with high accuracy using 3D imaging technologies,
+    creating a complete digital model of the site. It also analyzes inscriptions and artifacts to
+    identify the related civilization and historical period, and processes ancient maps to transmit
+    precise site locations.
+    <br /><br />
+    In addition, Techno Relics enhances site protection by monitoring excavation activities and
+    intelligently handling hazardous terrains to reduce human risk. It collects multi-source data,
+    including soil electrical conductivity, visual imagery, and AI-based analysis, delivering
+    comprehensive and accurate reports on potential archaeological locations.
+  </p>
+</section>
+
+<section>
+  <h2>Key Features</h2>
+  <div class="features">
+    <div class="card">
+      <h3>High Autonomy</h3>
+      <p>Self-navigation, balance correction, and intelligent decision-making with minimal human input.</p>
+    </div>
+    <div class="card">
+      <h3>3D Documentation</h3>
+      <p>High-resolution 3D scanning and full digital reconstruction of archaeological sites.</p>
+    </div>
+    <div class="card">
+      <h3>Intelligent Analysis</h3>
+      <p>AI-driven analysis of artifacts and inscriptions to determine civilization and era.</p>
+    </div>
+    <div class="card">
+      <h3>Site Protection</h3>
+      <p>Continuous monitoring and safe interaction with dangerous terrains to protect both people and sites.</p>
+    </div>
+    <div class="card">
+      <h3>Comprehensive Reports</h3>
+      <p>Integrated sensor data and AI insights delivered in fast, accurate, and actionable reports.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Sign Up for Early Access</h2>
+  <p>Register now to be among the first to try Techno Relics and receive exclusive updates.</p>
+
+  <form action="https://docs.google.com/forms/d/e/FORM_ID_HERE/formResponse" method="POST" target="_blank" style="max-width:500px;margin:30px auto;text-align:left;">
+    <label>Full Name</label><br />
+    <input type="text" name="entry.1111111111" required style="width:100%;padding:12px;margin:8px 0 18px;border-radius:8px;border:1px solid #ccc;" />
+
+    <label>Email Address</label><br />
+    <input type="email" name="entry.2222222222" required style="width:100%;padding:12px;margin:8px 0 18px;border-radius:8px;border:1px solid #ccc;" />
+
+    <label>Organization / Institution</label><br />
+    <input type="text" name="entry.3333333333" required style="width:100%;padding:12px;margin:8px 0 25px;border-radius:8px;border:1px solid #ccc;" />
+
+   <button type="submit" class="btn-primary" style="width:100%;">
+  Submit Registration
+</button>
+
+  </form>
+
+  <p style="font-size:0.9rem;color:#555;">Your information will be securely stored and used only for project communication.</p>
+</section>
+
+<footer>
+  © 2025 – Techno Relics Project | All Rights Reserved
+</footer>
+
+<script>
+  function tryNow() {
+    alert("Thank you for your interest! A demo request has been recorded.");
+  }
+
+  function viewOffer() {
+    alert("Exclusive Offer: Early access, full site report, and priority support.");
+  }
+
+  function openSignUp() {
+    window.location.href = "mailto:technorelics.project@gmail.com?subject=Techno Relics Sign Up";
+  }
+</script>
+
+</body>
+</html>
